@@ -19,14 +19,15 @@ var draw = function(){
   var red = Math.floor(Math.random() * 255);
   var green = Math.floor(Math.random() * 255);
   var blue = Math.floor(Math.random() * 255);
+  var hex = rgbToHex(red, blue, green);
 
   rgbContainer.innerHTML = 'RGB: ' + red + ', ' + blue + ', ' + green;
-  hexContainer.innerHTML = 'Hex: ' + rgbToHex(red, blue, green);
+  hexContainer.innerHTML = 'Hex: ' + hex;
 
   document.getElementsByTagName('head')[0].removeChild(document.getElementsByTagName('style')[0]);
   var style = document.createElement('style');
-  var color = 'body { background-color: ' + rgbToHex(red, blue, green) + ' } #button:hover { color: ' + rgbToHex(red, blue, green) + ' };';
-  style.appendChild(document.createTextNode(color));
+  var css = 'body { background-color: ' + hex + '; } a:link, a:active, a:visited { color: ' + hex + '; } #button:hover { color: ' + hex + '; };';
+  style.appendChild(document.createTextNode(css));
   document.getElementsByTagName('head')[0].appendChild(style);
 };
 

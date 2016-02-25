@@ -59,7 +59,15 @@ html, body {
   letter-spacing: 0.05em;
 }
 a:link, a:active, a:visited {
-  color: white;
+  background: white;
+	padding: 5px 10px;
+	text-decoration: none;
+	position: relative;
+	bottom: 0;
+	transition: all 0.2s ease-in-out;
+}
+a:hover {
+	bottom: 5px;
 }
 .title {
   position: fixed;
