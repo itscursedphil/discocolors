@@ -33,7 +33,8 @@ var draw = function(){
 
 button.addEventListener('click', draw);
 
-discoButton.addEventListener('click', function(){
+discoButton.addEventListener('click', function(e){
+  e.preventDefault();
   if(!disco){
     disco = !disco;
     makeDisco = setInterval(function(){
